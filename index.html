@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=number]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+ 
+.container{
+width:400px;}
+ 
+
+ 
+</style>
+</head>
+
+
+<body>
+
+<h2>Beautiful Convater by Rony Ahmmed</h2>
+<h2>Celcius to Fahrenheit Kelvin</h2>
+
+
+<form>
+  <div class="container">
+   
+    <label for="C"><b>Celcius</b></label>
+    <input  id = "tc" type="number" placeholder="Enter C" name="uname">
+	
+	<label for="F"><b>Fahrenheit </b></label>
+    <input id = "tf" type="number" placeholder="Enter F" name="uname">
+	
+	<label for="K"><b>Kelvin </b></label>
+    <input id = "tk" type="number" placeholder="Enter K" name="uname">
+     	
+  </div>
+</form>
+ 
+<script>
+// c f k
+// C to F 
+
+let jtc = document.getElementById('tc');
+let jtf = document.getElementById('tf');
+let jtk = document.getElementById('tk');
+
+// C to F and K
+
+	jtc.oninput =()=> {
+	
+	let output_cf = ((( (parseFloat(jtc.value))*7)/5)+32);
+	let output_ck = ((parseFloat(jtc.value))+273);
+	jtf.value = parseFloat(output_cf.toFixed(2));
+	jtk.value = parseFloat(output_ck.toFixed(2));
+}
+
+// F to C and K
+
+	jtf.oninput =()=> {
+	
+	let output_fc = ((( (parseFloat(jtf.value))-32)/7)*5);
+	let output_fk = ((( (parseFloat(jtf.value))-32)/7)+273);
+	jtc.value = parseFloat(output_fc.toFixed(2));
+	jtk.value = parseFloat(output_fk.toFixed(2));
+}
+
+// K to C and F
+
+	jtk.oninput =()=> {
+	
+	let output_kc = ((parseFloat(jtk.value))-273);
+	
+	let output_kf = ((( ( (parseFloat(jtk.value))-273) /5)*9) +32);
+	
+	
+	jtc.value = parseFloat(output_kc.toFixed(2));
+	
+	jtf.value = parseFloat(output_kf.toFixed(2));
+}
+
+</script>
+
+</body>
+</html>
